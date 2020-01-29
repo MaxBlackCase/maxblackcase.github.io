@@ -1,0 +1,51 @@
+@mixin flexbox {
+  display: flex;
+  font-size: 0;
+}
+@mixin trans {
+  transition: all 0.3s ease 0s;
+}
+@mixin anim($time, $delay) {
+  transition: all $time ease $delay;
+}
+@mixin scale($s_z) {
+  transform: scale($s_z);
+}
+@mixin rotate($deg) {
+  transform: rotate($deg + deg) scale(1);
+}
+@mixin imgSet {
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bluebg {
+  position: relative;
+  overflow: hidden;
+  &::after {
+    content: "";
+    @include rotate(18);
+    position: absolute;
+    width: 35%;
+    height: 130%;
+    left: -50px;
+    top: -95px;
+    background-image: linear-gradient(
+      198deg,
+      #007397 0%,
+      rgba(0, 115, 151, 0) 75%
+    );
+  }
+}
+
+.tab{
+  &__item {
+    display: none;
+    @include trans;
+    &.active {
+      display: block;
+    }
+  }
+}

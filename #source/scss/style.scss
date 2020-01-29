@@ -1,4 +1,38 @@
-body{
-  background: #212121;
-  color: #818181;
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700,900&display=swap");
+@import "./_zeroing";
+@import "./_mixins";
+@import './_var';
+@import "./_palette";
+@import "./_header";
+
+body {
+  height: 100%;
+  background-color: $primaryBg;
+  font-family: 'Fira Sans';
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  width: 100%;
+  max-width: $mw;
+  margin: 0 auto;
+  @include trans;
+  @media (max-width: $md1) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+.ibg {
+  img {
+    @include imgSet;
+  }
 }
