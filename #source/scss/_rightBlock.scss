@@ -1,0 +1,74 @@
+.right-block {
+  height: 100%;
+  width: 100%;
+  @include flexbox;
+  flex-direction: column;
+  &__column {
+    @include flexbox;
+    position: relative;
+    align-items: center;
+    flex: 1 1 25%;
+    border-bottom: 15px solid #47474f;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #1a1b23, $alpha: 0.85);
+    }
+  }
+
+  &__profile,
+  &__resume,
+  &__portfolio,
+  &__contacts {
+    @include flexbox;
+    flex-direction: row;
+    align-items: center;
+    color: $mainFontColor;
+    padding: 0px 0px 0px 100px;
+  }
+
+  &__icon {
+    position: relative;
+    @include flexbox;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: rgba($color: #6b6b76, $alpha: 0.5);
+    width: 64px;
+    height: 64px;
+    z-index: 1;
+    i {
+      position: absolute;
+      font-size: 32px;
+      color: #fff;
+    }
+  }
+
+  &__text {
+    font-size: 32px;
+    padding: 0px 0px 0px 25px;
+    z-index: 1;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 34px;
+    text-transform: uppercase;
+    span {
+      color: #536e79;
+    }
+  }
+
+  &__subtitle {
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+  }
+}
