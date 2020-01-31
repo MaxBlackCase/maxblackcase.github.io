@@ -14,6 +14,8 @@ body {
 .wrapper {
   width: 100%;
   height: 100%;
+  margin: 0 auto;
+  background: url(../img/bg.jpg) 0 0 / cover no-repeat;
 }
 .container {
   width: 100%;
@@ -32,7 +34,10 @@ body {
   }
 }
 .ibg {
-  img {
-    @include imgSet;
+  width: 128px;
+  height: 128px;
+  @include imgSet;
+  img{
+    display: none;
   }
 }
