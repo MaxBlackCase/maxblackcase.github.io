@@ -26,7 +26,6 @@
   overflow: hidden;
   &::after {
     content: "";
-    @include rotate(18);
     position: absolute;
     width: 35%;
     height: 130%;

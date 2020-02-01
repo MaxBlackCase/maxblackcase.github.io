@@ -59,9 +59,6 @@ h1, h2, h3, h4, h5, h5 {
   overflow: hidden; }
   .bluebg::after {
     content: "";
-    -webkit-transform: rotate(18deg) scale(1);
-    -ms-transform: rotate(18deg) scale(1);
-    transform: rotate(18deg) scale(1);
     position: absolute;
     width: 35%;
     height: 130%;
@@ -217,7 +214,21 @@ body {
     -ms-flex: 1 1 25%;
     flex: 1 1 25%;
     border-bottom: 15px solid #47474f;
-    cursor: pointer; }
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    overflow: hidden; }
+    .right-block__column:hover .right-block__icon::after {
+      -webkit-animation: item-icon-after 0.5s linear;
+      animation: item-icon-after 0.5s linear; }
+    .right-block__column:hover .right-block__icon::before {
+      -webkit-animation: item-icon-before 0.5s linear;
+      animation: item-icon-before 0.5s linear; }
+    .right-block__column:hover .right-block__title span {
+      -webkit-transform: rotate(360deg) scale(1);
+      -ms-transform: rotate(360deg) scale(1);
+      transform: rotate(360deg) scale(1); }
     .right-block__column::after {
       content: "";
       position: absolute;
@@ -227,6 +238,7 @@ body {
       height: 100%;
       background: rgba(26, 27, 35, 0.85); }
   .right-block__profile, .right-block__resume, .right-block__portfolio, .right-block__contacts {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -260,7 +272,30 @@ body {
     background: rgba(107, 107, 118, 0.5);
     width: 64px;
     height: 64px;
-    z-index: 1; }
+    z-index: 1;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+    .right-block__icon::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 0; }
+    .right-block__icon::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 0; }
     .right-block__icon i {
       position: absolute;
       font-size: 32px;
@@ -273,10 +308,73 @@ body {
     font-weight: 500;
     font-size: 28px;
     line-height: 34px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
     .right-block__title span {
+      -webkit-transition: all 0.3s ease 0s;
+      -o-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      display: inline-block;
       color: #536e79; }
   .right-block__subtitle {
     font-weight: normal;
     font-size: 22px;
     line-height: 26px; }
+
+@-webkit-keyframes item-icon-after {
+  0% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); }
+  50% {
+    width: 512px;
+    height: 512px;
+    background: rgba(255, 255, 255, 0.3); }
+  100% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); } }
+
+@keyframes item-icon-after {
+  0% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); }
+  50% {
+    width: 512px;
+    height: 512px;
+    background: rgba(255, 255, 255, 0.3); }
+  100% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); } }
+
+@-webkit-keyframes item-icon-before {
+  0% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); }
+  50% {
+    width: 128px;
+    height: 128px;
+    background: rgba(255, 255, 255, 0.3); }
+  100% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); } }
+
+@keyframes item-icon-before {
+  0% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); }
+  50% {
+    width: 128px;
+    height: 128px;
+    background: rgba(255, 255, 255, 0.3); }
+  100% {
+    width: 64px;
+    height: 64px;
+    background: rgba(255, 255, 255, 0); } }

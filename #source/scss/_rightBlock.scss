@@ -10,6 +10,21 @@
     flex: 1 1 25%;
     border-bottom: 15px solid #47474f;
     cursor: pointer;
+    @include trans;
+    overflow: hidden;
+    &:hover {
+      .right-block__icon::after {
+        animation: item-icon-after 0.5s linear;
+      }
+      .right-block__icon::before {
+        animation: item-icon-before 0.5s linear;
+      }
+      .right-block__title {
+        span{
+          @include rotate(360);
+        }
+      }
+    }
     &::after {
       content: "";
       position: absolute;
@@ -25,6 +40,7 @@
   &__resume,
   &__portfolio,
   &__contacts {
+    position: relative;
     @include flexbox;
     flex-direction: row;
     align-items: center;
@@ -43,6 +59,25 @@
     width: 64px;
     height: 64px;
     z-index: 1;
+    @include trans;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+    }
     i {
       position: absolute;
       font-size: 32px;
@@ -61,7 +96,10 @@
     font-size: 28px;
     line-height: 34px;
     text-transform: uppercase;
+    @include trans;
     span {
+      @include trans;
+      display: inline-block;
       color: #536e79;
     }
   }
