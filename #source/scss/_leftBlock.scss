@@ -20,6 +20,9 @@
       &:hover{
         color: $spanFontColor;
       }
+      @media (max-width: $md3){
+        font-size: 24px;
+      }
     }
   }
 }
@@ -31,6 +34,9 @@
     line-height: 58px;
     text-transform: uppercase;
     text-align: center;
+    @media (max-width: $md3){
+      font-size: 40px;
+    }
   }
 
   &__name {
@@ -41,6 +47,9 @@
     text-align: center;
     span {
       color: $spanFontColor;
+    }
+    @media (max-width: $md3){
+      font-size: 40px;
     }
   }
 
@@ -53,6 +62,9 @@
     text-transform: uppercase;
     margin: 25px 0px 0px 0px;
     color: #dcdcdc;
+    @media (max-width: $md3){
+      font-size: 18px;
+    }
   }
 }
 

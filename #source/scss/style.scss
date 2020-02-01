@@ -50,11 +50,17 @@ body {
   &__row {
     height: 100%;
     @include flexbox;
+    @media (max-width: $md3){
+      flex-direction: column;
+    }
   }
 
   &__column {
     height: 100%;
-    flex: 1 1 50%;
+    flex: 1 1 25%;
+    @media (max-width: $md3){
+      flex: 1 0 100%;
+    }
   }
 }
 
