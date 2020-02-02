@@ -7,20 +7,19 @@
   width: 100%;
   height: 100%;
   background: rgba($color: #1a1b23, $alpha: 0.85);
-  &__greeting {
-  }
-
+  @include trans;
+  
   &__social {
-    margin: 25px 0px 0px 0px;
-    a{
-      color: #C6C6C6;
+    margin: 25px 0px 25px 0px;
+    a {
+      color: #c6c6c6;
       font-size: 32px;
       margin: 0px 15px 0px 15px;
       @include trans;
-      &:hover{
+      &:hover {
         color: $spanFontColor;
       }
-      @media (max-width: $md3){
+      @media (max-width: $md3) {
         font-size: 24px;
       }
     }
@@ -34,7 +33,7 @@
     line-height: 58px;
     text-transform: uppercase;
     text-align: center;
-    @media (max-width: $md3){
+    @media (max-width: $md3) {
       font-size: 40px;
     }
   }
@@ -48,7 +47,7 @@
     span {
       color: $spanFontColor;
     }
-    @media (max-width: $md3){
+    @media (max-width: $md3) {
       font-size: 40px;
     }
   }
@@ -62,9 +61,8 @@
     text-transform: uppercase;
     margin: 25px 0px 0px 0px;
     color: #dcdcdc;
-    @media (max-width: $md3){
+    @media (max-width: $md3) {
       font-size: 18px;
     }
   }
 }
-

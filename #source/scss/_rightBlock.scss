@@ -12,6 +12,9 @@
     cursor: pointer;
     @include trans;
     overflow: hidden;
+    @media (max-width: $md3) {
+      flex: 0 0 50%;
+    }
     &:hover {
       .right-block__icon::after {
         animation: item-icon-after 0.5s linear;
@@ -51,7 +54,7 @@
       padding: 0px 0px 0px 50px;
     }
     @media (max-width: $md4) {
-      padding: 15px;
+      padding: 5px;
     }
   }
 
