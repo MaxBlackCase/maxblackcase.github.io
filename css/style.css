@@ -165,7 +165,7 @@ body {
         -ms-flex: 0 0 50%;
         flex: 0 0 50%; } }
   .wrapper .close {
-    position: fixed;
+    position: absolute;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -189,7 +189,7 @@ body {
       display: block;
       height: 3px;
       width: 32px;
-      background: #000; }
+      background-color: #000; }
       .wrapper .close span:first-child {
         -webkit-transform: rotate(-45deg) scale(1);
         -ms-transform: rotate(-45deg) scale(1);
@@ -198,6 +198,9 @@ body {
         -webkit-transform: rotate(45deg) scale(1);
         -ms-transform: rotate(45deg) scale(1);
         transform: rotate(45deg) scale(1); }
+      @media (max-width: 767.98px) {
+        .wrapper .close span {
+          background-color: #fff; } }
   .wrapper .content__row {
     position: absolute;
     top: 0;
@@ -447,30 +450,33 @@ body {
         font-size: 14px;
         line-height: 20px; } }
 
-.profile {
+.profile, .resume, .portfolio, .contacts {
+  letter-spacing: .1px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 0;
+  position: relative;
   width: 100%;
   height: 100%;
-  visibility: hidden;
   opacity: 0;
-  -webkit-transition: all .8s ease-in;
-  -o-transition: all .8s ease-in;
-  transition: all .8s ease-in; }
-  .profile.active {
+  visibility: hidden;
+  -webkit-transition: all 0.8s ease-in;
+  -o-transition: all 0.8s ease-in;
+  transition: all 0.8s ease-in; }
+  .profile.active, .resume.active, .portfolio.active, .contacts.active {
     visibility: visible;
     opacity: 1; }
-  .profile__column {
+  .profile__column, .resume__column, .portfolio__column, .contacts__column {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 50%;
     flex: 1 1 50%; }
     @media (max-width: 767.98px) {
-      .profile__column {
+      .profile__column, .resume__column, .portfolio__column, .contacts__column {
         -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
         flex: 0 1 100%; } }
-  .profile__leftBlock {
+  .profile__leftBlock, .resume__leftBlock, .portfolio__leftBlock, .contacts__leftBlock {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -478,54 +484,63 @@ body {
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end;
-    padding: 0px 100px 150px 50px;
+    padding: 0px 100px 80px 40px;
     height: 100%; }
-    .profile__leftBlock::after {
-      content: '';
+    .profile__leftBlock::after, .resume__leftBlock::after, .portfolio__leftBlock::after, .contacts__leftBlock::after {
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       background-color: rgba(0, 0, 0, 0.6); }
-  .profile__rightBlock {
+    @media (max-width: 767.98px) {
+      .profile__leftBlock, .resume__leftBlock, .portfolio__leftBlock, .contacts__leftBlock {
+        padding: 0px 100px 35px 100px; } }
+    @media (max-width: 567.98px) {
+      .profile__leftBlock, .resume__leftBlock, .portfolio__leftBlock, .contacts__leftBlock {
+        padding: 0px 40px 35px 40px; } }
+  .profile__rightBlock, .resume__rightBlock, .portfolio__rightBlock, .contacts__rightBlock {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: relative;
     height: 100%; }
-    .profile__rightBlock::after {
-      content: '';
+    .profile__rightBlock::after, .resume__rightBlock::after, .portfolio__rightBlock::after, .contacts__rightBlock::after {
+      content: "";
       position: absolute;
       width: 100%;
       height: 100%;
       top: 0;
       right: 0;
       background-color: rgba(255, 255, 255, 0.8); }
+  .profile__title, .resume__title, .portfolio__title, .contacts__title {
+    position: relative;
+    width: 100%;
+    font-weight: 500;
+    font-size: 52px;
+    color: #fff;
+    z-index: 1; }
+    .profile__title span, .resume__title span, .portfolio__title span, .contacts__title span {
+      color: #095fb4; }
+    .profile__title::after, .resume__title::after, .portfolio__title::after, .contacts__title::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #095fb4; }
+    @media (max-width: 767.98px) {
+      .profile__title, .resume__title, .portfolio__title, .contacts__title {
+        text-align: center;
+        font-size: 38px; } }
   @media (max-width: 767.98px) {
-    .profile {
+    .profile, .resume, .portfolio, .contacts {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column; } }
-
-.profile-leftBlock__title {
-  width: 100%;
-  position: relative;
-  font-weight: 500;
-  z-index: 1;
-  font-size: 52px;
-  color: #fff; }
-  .profile-leftBlock__title span {
-    color: #095fb4; }
-  .profile-leftBlock__title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background-color: #095fb4; }
 
 @-webkit-keyframes item-icon-after {
   0% {

@@ -89,7 +89,7 @@ body {
   }
 
   .close{
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,12 +108,15 @@ body {
       display: block;
       height: 3px;
       width: 32px;
-      background: #000;
+      background-color: #000;
       &:first-child{
         @include rotate(-45);
       }
       &:last-child{
         @include rotate(45);
+      }
+      @media (max-width: $md3) {
+        background-color: #fff;
       }
     }
   }
@@ -133,7 +136,7 @@ body {
 // ? </MAIN>
 
 // ? <CONTENT>
-@import "./_profile";
+@import "./_content";
 // ? </CONTENT>
 
 // ? <KEYFRAMES>

@@ -397,15 +397,19 @@ $(".right-block__column").on("click", function(e) {
   e.preventDefault();
 
   var targetItem = $(this).attr("data-target");
-  var targetTab = $(".content__row").attr("data-target");
-
+  
+  
+  console.log('targetItem: ', targetItem);
+  
+  
   $(".content").each(function(index, val) {
     $(".content__row").removeClass("active");
-    if (targetItem == targetTab) {
+    
+    if ($('.content__row').hasClass(targetItem)) {
 
       // * Content
       $(".close").addClass("active");
-      $(".content__row").addClass("active");
+      $("."+targetItem).addClass("active");
 
       // * Menu
       $(".left-column").addClass("active");
