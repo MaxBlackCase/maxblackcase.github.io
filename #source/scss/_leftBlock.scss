@@ -23,6 +23,9 @@
         font-size: 24px;
       }
     }
+    @media (max-width: $md3) {
+      margin: 15px 0px 15px 0px;
+    }
   }
 }
 
@@ -34,7 +37,7 @@
     text-transform: uppercase;
     text-align: center;
     @media (max-width: $md3) {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
 
@@ -48,7 +51,7 @@
       color: $spanFontColor;
     }
     @media (max-width: $md3) {
-      font-size: 40px;
+      font-size: 32px;
     }
   }
 
@@ -63,6 +66,7 @@
     color: #dcdcdc;
     @media (max-width: $md3) {
       font-size: 18px;
+      margin: 5px 0px 0px 0px;
     }
   }
 }

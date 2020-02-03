@@ -46,14 +46,14 @@ body {
 }
 
 .wrapper {
-  position: relative;
   width: 100%;
   margin: 0 auto;
+  overflow-x: hidden;
   &__row {
     position: relative;
     height: 100%;
     @include flexbox;
-    @media (max-width: $md3) {
+    @media (max-width: $md4) {
       flex-direction: column;
     }
   }
@@ -67,7 +67,6 @@ body {
       left: 0;
       &.active {
         left: -100%;
-        transform: scale(2);
         opacity: 0;
       }
     }
@@ -75,14 +74,46 @@ body {
       right: 0;
       &.active {
         right: -100%;
-        transform: scale(2);
         opacity: 0;
+        z-index: 0;
       }
     }
-    @media (max-width: $md3) {
-      flex: 1 0 100%;
+    @media (max-width: $md4) {
+      height: 50%;
+      flex: 0 0 (100%/2);
     }
   }
+
+  .close{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    top: 15px;
+    right: 15px;
+    visibility: hidden;
+    z-index: 1;
+    &.active{
+      visibility: visible;
+    }
+    cursor: pointer;
+    span{
+      position: absolute;
+      display: block;
+      height: 2px;
+      width: 32px;
+      background: #ffffff;
+      &:first-child{
+        @include rotate(-45);
+      }
+      &:last-child{
+        @include rotate(45);
+      }
+    }
+  }
+
 }
 
 // ? <CONTENT>
