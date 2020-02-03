@@ -53,8 +53,12 @@ body {
     position: relative;
     height: 100%;
     @include flexbox;
+    z-index: 10;
     @media (max-width: $md4) {
       flex-direction: column;
+    }
+    &.active{
+      visibility: hidden;
     }
   }
 
@@ -67,7 +71,7 @@ body {
       left: 0;
       &.active {
         left: -100%;
-        opacity: 0;
+        visibility: hidden;
       }
     }
     &.right-column {
@@ -102,9 +106,9 @@ body {
     span{
       position: absolute;
       display: block;
-      height: 2px;
+      height: 3px;
       width: 32px;
-      background: #ffffff;
+      background: #000;
       &:first-child{
         @include rotate(-45);
       }
@@ -114,11 +118,22 @@ body {
     }
   }
 
+  .content{
+    &__row{
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 }
 
-// ? <CONTENT>
+// ? <MAIN>
 @import "./_leftBlock";
 @import "./_rightBlock";
+// ? </MAIN>
+
+// ? <CONTENT>
+@import "./_profile";
 // ? </CONTENT>
 
 // ? <KEYFRAMES>
