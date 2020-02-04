@@ -1,0 +1,171 @@
+.profile-content {
+  overflow: hidden;
+  color: #212121;
+  @include unselectable;
+  &__body {
+    @include flexbox;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    @media (max-width: $md3) {
+      overflow: hidden;
+    }
+  }
+  &__info {
+    padding: 100px 35px 75px 35px;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 500;
+    color: #666464;
+    font-size: 44px;
+  }
+
+  &__text {
+    text-align: justify;
+    font-size: 18px;
+    font-weight: 400;
+    color: #271a1c;
+    letter-spacing: 0.1px;
+    padding: 50px 0px 0px 0px;
+    margin: 0px 0px 25px 0px;
+    text-indent: 25px;
+    line-height: 1.5;
+    @media (max-width: $md3) {
+      text-align: center;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__buttons {
+    a {
+      display: inline-block;
+      padding: 10px 35px;
+      font-size: 20px;
+      color: #0080ff;
+      border: 1px solid #0080ff;
+      line-height: 24px;
+      @include trans;
+      border-radius: 5px;
+      &:hover {
+        background: #0080ff;
+        color: #fff;
+      }
+    }
+  }
+}
+
+.profile-skils {
+  background-color: #0080ff;
+  padding: 75px 0px 35px 0px;
+  &__title {
+    text-align: center;
+    font-weight: 500;
+    color: #fff;
+    font-size: 44px;
+    margin: 0px 0px 50px 0px;
+  }
+
+  &__row {
+    @include flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__column {
+    height: 100%;
+    flex: 1 1 (100%/2);
+    @media (max-width: $md2) {
+      flex: 1 1 100%;
+    }
+  }
+}
+.profile-card {
+  @include flexbox;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  color: #fff;
+  text-align: center;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all 0.8s linear;
+  }
+  &:hover::before {
+    background-color: rgba($color: #fff, $alpha: 0.1);
+  }
+  &__icon {
+    position: relative;
+    background: #fff;
+    width: 64px;
+    height: 64px;
+    font-size: 32px;
+    border-radius: 50%;
+    margin: 25px 0px 25px 0px;
+    cursor: pointer;
+    i {
+      color: #0080ff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: rgba($color: #fff, $alpha: 0.3);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 82px;
+      height: 82px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background-color: rgba($color: #000000, $alpha: 0);
+      transition: all 0.16s linear;
+    }
+    &:hover {
+      &::after {
+        background-color: rgba($color: #fff, $alpha: 0.5);
+        opacity: 0;
+        width: 146px;
+        height: 146px;
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 50px;
+    font-size: 28px;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
