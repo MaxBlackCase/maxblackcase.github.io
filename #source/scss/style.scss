@@ -34,7 +34,6 @@ body {
 .container {
   max-width: $mw;
   margin: 0 auto;
-  @include anim(1s, 0);
   @media (max-width: $md1) {
     max-width: 970px;
   }
