@@ -1,18 +1,22 @@
 .profile-content {
+  height: 100%;
   overflow: hidden;
   color: #212121;
   @include unselectable;
   &__body {
     @include flexbox;
     flex-direction: column;
-    overflow-y: scroll;
     z-index: 1;
+    overflow-y: scroll;
     @media (max-width: $md3) {
       overflow: hidden;
     }
   }
   &__info {
-    padding: 100px 35px 75px 35px;
+    padding: 50px 35px 50px 35px;
+    @media (max-width: $md3) {
+      padding: 25px 15px 25px 15px;
+    }
   }
 
   &__title {
@@ -20,6 +24,14 @@
     font-weight: 500;
     color: #666464;
     font-size: 44px;
+    margin: 0px 0px 25px 0px;
+    @media (max-width: $md2) {
+      font-size: 36px;
+    }
+    @media (max-width: $md3) {
+      font-size: 32px;
+      margin: 0px 0px 25px 0px;
+    }
   }
 
   &__text {
@@ -28,19 +40,25 @@
     font-weight: 400;
     color: #271a1c;
     letter-spacing: 0.1px;
-    padding: 50px 0px 0px 0px;
-    margin: 0px 0px 25px 0px;
     text-indent: 25px;
     line-height: 1.5;
+    margin: 0px 0px 25px 0px;
     @media (max-width: $md3) {
       text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
     }
     p {
       margin-bottom: 15px;
+      @media (max-width: $md3) {
+        font-size: 14px;
+      }
     }
   }
 
   &__buttons {
+    width: 100%;
+    text-align: left;
     a {
       display: inline-block;
       padding: 10px 35px;
@@ -55,23 +73,28 @@
         color: #fff;
       }
     }
+    @media (max-width: $md2) {
+      text-align: center;
+    }
   }
 }
 
 .profile-skils {
   background-color: #0080ff;
-  padding: 75px 0px 35px 0px;
+  padding: 50px 0px 35px 0px;
   &__title {
     text-align: center;
     font-weight: 500;
     color: #fff;
     font-size: 44px;
-    margin: 0px 0px 50px 0px;
+    margin: 0px 0px 25px 0px;
+    @media (max-width: $md3) {
+      margin: 0px 0px 15px 0px;
+    }
   }
 
   &__row {
     @include flexbox;
-    flex-direction: row;
     flex-wrap: wrap;
   }
 
@@ -82,6 +105,7 @@
       flex: 1 1 100%;
     }
   }
+  
 }
 .profile-card {
   @include flexbox;
@@ -159,12 +183,16 @@
     overflow: hidden;
     height: 50px;
     font-size: 28px;
+    line-height: 50px;
   }
 
   &__text {
     flex: 1 1 auto;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5;
+    @media (max-width: $md3) {
+      max-width: 400px;
+    }
   }
 }
 

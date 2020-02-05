@@ -6,6 +6,7 @@
   height: 100%;
   opacity: 0;
   visibility: hidden;
+  overflow: hidden;
   transition: all 0.8s ease-in;
   &.active {
     visibility: visible;
@@ -84,6 +85,7 @@
 
   @media (max-width: $md3) {
     flex-direction: column;
+    overflow-y: scroll;
   }
 }
 
