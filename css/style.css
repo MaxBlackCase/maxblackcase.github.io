@@ -519,7 +519,7 @@ body {
     display: flex;
     position: relative;
     height: 100%; }
-    .profile__rightBlock::after, .resume__rightBlock::after, .portfolio__rightBlock::after, .contacts__rightBlock::after {
+    .profile__rightBlock::before, .resume__rightBlock::before, .portfolio__rightBlock::before, .contacts__rightBlock::before {
       content: "";
       position: absolute;
       width: 100%;
@@ -782,12 +782,12 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 10px 15px; }
+  padding: 10px 15px;
+  color: #0080ff; }
   .copyright__column {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 50%;
     flex: 1 1 50%;
-    color: #095fb4;
     font-weight: bold; }
     @media (max-width: 767.98px) {
       .copyright__column {
@@ -819,6 +819,337 @@ body {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; } }
+
+.resume-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  overflow-y: scroll; }
+  .resume-content__education {
+    z-index: 1;
+    padding: 50px;
+    background: #fff; }
+    @media (max-width: 767.98px) {
+      .resume-content__education {
+        padding: 25px 10px 25px 10px; } }
+  .resume-content__experience {
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background: #0080ff;
+    z-index: 1; }
+    @media (max-width: 767.98px) {
+      .resume-content__experience {
+        padding: 25px 10px 25px 10px; } }
+  .resume-content__skills {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: 25px;
+    background: #fff;
+    z-index: 1; }
+    @media (max-width: 767.98px) {
+      .resume-content__skills {
+        padding: 25px 10px 25px 10px; } }
+  .resume-content__title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 500;
+    margin: 0px 0px 50px 0px; }
+    .resume-content__title_b {
+      color: #3a3a3a; }
+    .resume-content__title_w {
+      color: #fff; }
+  @media (max-width: 767.98px) {
+    .resume-content {
+      overflow-y: hidden; } }
+  .resume-content__copyright {
+    background: #0080ff;
+    color: #fff; }
+
+.education-resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  margin: 0px 0px 5px 0px; }
+  .education-resume__column {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto; }
+    .education-resume__column:first-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 1 20px;
+      flex: 0 1 20px; }
+      .education-resume__column:first-child span {
+        display: inline-block; }
+        .education-resume__column:first-child span:first-child {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+          width: 20px;
+          height: 20px;
+          margin: 0px 0px 5px 0px;
+          border-radius: 5px;
+          border-radius: 50%;
+          background: #0080ff; }
+        .education-resume__column:first-child span:last-child {
+          width: 4px;
+          height: 100%;
+          background: #0080ff; }
+      @media (max-width: 767.98px) {
+        .education-resume__column:first-child {
+          display: none; } }
+    .education-resume__column:last-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 100%;
+      padding: 0px 0px 0px 15px; }
+      @media (max-width: 767.98px) {
+        .education-resume__column:last-child {
+          padding: 0; } }
+  .education-resume__title {
+    padding: 5px 10px 5px 10px;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    letter-spacing: 0.1px;
+    background: #0080ff;
+    border-radius: 5px; }
+    .education-resume__title::before {
+      content: "";
+      position: absolute;
+      top: 14px;
+      left: 0px;
+      border: 8px solid transparent;
+      border-right: 8px solid #0080ff;
+      -webkit-transform: translateY(-75%);
+      -ms-transform: translateY(-75%);
+      transform: translateY(-75%); }
+      @media (max-width: 767.98px) {
+        .education-resume__title::before {
+          display: none; } }
+    @media (max-width: 767.98px) {
+      .education-resume__title {
+        font-size: 16px;
+        text-align: center; } }
+  .education-resume__text {
+    color: #3a3a3a;
+    padding: 25px 0px 25px 0px;
+    line-height: 1.2;
+    font-size: 16px;
+    letter-spacing: 0.1px; }
+    @media (max-width: 767.98px) {
+      .education-resume__text {
+        text-align: center;
+        font-size: 12px;
+        margin: 0px 10px 0px 10px; } }
+
+.experience-resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  margin: 0px 0px 5px 0px; }
+  .experience-resume__column {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto; }
+    .experience-resume__column:first-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+      order: 2;
+      -webkit-box-flex: 0;
+      -ms-flex: 0 1 20px;
+      flex: 0 1 20px; }
+      .experience-resume__column:first-child span {
+        display: inline-block; }
+        .experience-resume__column:first-child span:first-child {
+          -webkit-box-flex: 0;
+          -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+          width: 20px;
+          height: 20px;
+          margin: 0px 0px 5px 0px;
+          border-radius: 5px;
+          border-radius: 50%;
+          background: #fff; }
+        .experience-resume__column:first-child span:last-child {
+          width: 4px;
+          height: 100%;
+          background: #fff; }
+      @media (max-width: 767.98px) {
+        .experience-resume__column:first-child {
+          display: none; } }
+    .experience-resume__column:last-child {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      font-size: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+      order: 1;
+      width: 100%;
+      padding: 0px 15px 0px 0px; }
+      @media (max-width: 767.98px) {
+        .experience-resume__column:last-child {
+          padding: 0; } }
+  .experience-resume__title {
+    padding: 5px 10px 5px 10px;
+    color: #3a3a3a;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+    border-radius: 5px 0 5px 5px;
+    letter-spacing: 0.1px;
+    background: #fff;
+    border-radius: 5px; }
+    .experience-resume__title::before {
+      content: "";
+      position: absolute;
+      top: 15px;
+      right: 0;
+      border: 8px solid transparent;
+      border-left: 8px solid #fff;
+      -webkit-transform: translateY(-75%);
+      -ms-transform: translateY(-75%);
+      transform: translateY(-75%); }
+      @media (max-width: 767.98px) {
+        .experience-resume__title::before {
+          display: none; } }
+    @media (max-width: 767.98px) {
+      .experience-resume__title {
+        font-size: 16px;
+        text-align: center; } }
+  .experience-resume__text {
+    color: #fff;
+    padding: 25px 0px 25px 0px;
+    line-height: 1.2;
+    font-size: 16px;
+    letter-spacing: 0.1px; }
+    @media (max-width: 767.98px) {
+      .experience-resume__text {
+        text-align: center;
+        font-size: 12px;
+        margin: 0px 10px 0px 10px; } }
+
+.skills-resume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%; }
+  .skills-resume__column {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.33333%;
+    flex: 0 0 33.33333%;
+    padding: -25px 0px -25px 0px; }
+    @media (max-width: 992.98px) {
+      .skills-resume__column {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%; } }
+    @media (max-width: 390px) {
+      .skills-resume__column {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%; } }
+  .skills-resume__box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    font-size: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 25px 0px 25px 0px; }
+  .skills-resume__chart canvas {
+    width: 150px !important;
+    height: 150px !important; }
+  .skills-resume__title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    height: 22px;
+    overflow: hidden;
+    letter-spacing: 1.2px;
+    color: #3a3a3a; }
+
+.chart {
+  position: relative; }
+  .chart h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: #3a3a3a; }
 
 @-webkit-keyframes item-icon-after {
   0% {

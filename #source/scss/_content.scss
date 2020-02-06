@@ -46,7 +46,7 @@
     display: flex;
     position: relative;
     height: 100%;
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       width: 100%;
@@ -88,4 +88,3 @@
     overflow-y: scroll;
   }
 }
-
