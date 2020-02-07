@@ -427,16 +427,25 @@ $(".close").on("click", function(e) {
   $(".wrapper__row").removeClass("active");
 });
 
-$(".chart").easyPieChart({
-  barColor: "#0080ff",
-  trackColor: "rgba(0, 128, 255, .2)",
-  scaleColor: "rgba(0, 128, 255, .6)",
-  scaleLength: 8,
-  animate: {
-    duration: 2000,
-    enabled: true
+var elem = $(".skills-resume");
+$counter = 0;
+$('.resume-content').scroll(function() {
+  var scroll = $(this).scrollTop() + $(this).height();;
+  var offset = elem.offset().top + elem.height();
+  if (scroll > offset && $counter == 0) {
+    console.log('Hi', 'Hi');
+    $(".chart").easyPieChart({
+      barColor: "#0080ff",
+      trackColor: "rgba(0, 128, 255, .2)",
+      scaleColor: "rgba(0, 128, 255, .6)",
+      scaleLength: 8,
+      animate: {
+        duration: 2500,
+        enabled: true
+      }
+    });
+    $counter = 1;
   }
 });
-
 
 });
