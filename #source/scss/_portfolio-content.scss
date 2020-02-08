@@ -1,12 +1,16 @@
 .portfolio-content {
-
   &__body {
     @include flexbox;
     flex-direction: column;
     z-index: 1;
     padding: 50px 35px;
     width: 100%;
+    background-color: #fff;
+    @media (max-width: $md2) {
+      padding: 25px 10px;
+    }
     @media (max-width: $md3) {
+      padding: 25px 10px;
     }
   }
 
@@ -16,8 +20,76 @@
     align-items: center;
     font-size: 32px;
     font-weight: 500;
+    margin: 0px 0px 35px 0px;
     &_b {
       color: $fontProtfolio;
     }
+    @media (max-width: $md3) {
+      margin: 0px 0px 25px 0px;
+    }
+  }
+}
+.portfolio-body {
+  &__menu {
+    @include flexbox;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0px 0px 20px 0px;
+  }
+  &__item {
+    // max-width: 200px;
+    flex: 0 0 (100% / 4);
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    color: $fontProtfolio;
+    color: $mainColor;
+    padding: -5px;
+    @include trans;
+    li {
+      @include trans;
+      border: 1px solid $mainColor;
+      border-radius: 5px;
+      margin: 5px;
+      padding: 5px 0;
+      &:hover {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
+    @media (max-width: $md2) {
+      flex: 1 0 (100% / 2);
+    }
+    @media (max-width: $md3) {
+      flex: 1 0 (100% / 3);
+    }
+    @media (max-width: $md4) {
+      max-width: 350px;
+      flex: 0 1 100%;
+    }
+  }
+
+  &__main {
+  }
+}
+
+.portfolio-main {
+  @include flexbox;
+  flex-wrap: wrap;
+  &__column {
+    flex: 0 0 (100% / 3);
+    padding: 5px;
+    img {
+    }
+    @media (max-width: $md2) {
+      flex: 0 0 (100% / 2);
+    }
+    @media (max-width: $md4) {
+      flex: 0 0 100%;
+    }
+  }
+  &__image {
+    height: 100px;
   }
 }
