@@ -68,6 +68,12 @@
       max-width: 350px;
       flex: 0 1 100%;
     }
+    &.active{
+      li {
+        background-color: $mainColor;
+        color: #fff;
+      }
+    }
   }
 
   &__main {
