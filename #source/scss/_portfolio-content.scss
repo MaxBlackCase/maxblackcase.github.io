@@ -1,11 +1,23 @@
 .portfolio-content {
 
   &__body {
+    @include flexbox;
+    flex-direction: column;
     z-index: 1;
+    padding: 50px 35px;
+    width: 100%;
+    @media (max-width: $md3) {
+    }
   }
 
   &__title {
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
     font-size: 32px;
-    color: #212121;
+    font-weight: 500;
+    &_b {
+      color: $fontProtfolio;
+    }
   }
 }
