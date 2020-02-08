@@ -1151,6 +1151,13 @@ body {
     font-weight: 500;
     color: #3a3a3a; }
 
+.portfolio-content__body {
+  z-index: 1; }
+
+.portfolio-content__title {
+  font-size: 32px;
+  color: #212121; }
+
 @-webkit-keyframes item-icon-after {
   0% {
     width: 64px;
