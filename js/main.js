@@ -429,11 +429,11 @@ $(".close").on("click", function(e) {
 
 var elem = $(".skills-resume");
 $counter = 0;
-$('.resume-content').scroll(function() {
-  var scroll = $(this).scrollTop() + $(this).height();;
+$(".resume-content").scroll(function() {
+  var scroll = $(this).scrollTop() + $(this).height();
   var offset = elem.offset().top + elem.height();
   if (scroll > offset && $counter == 0) {
-    console.log('Hi', 'Hi');
+    console.log("Hi", "Hi");
     $(".chart").easyPieChart({
       barColor: "#0080ff",
       trackColor: "rgba(0, 128, 255, .2)",
@@ -447,5 +447,33 @@ $('.resume-content').scroll(function() {
     $counter = 1;
   }
 });
+
+// ? <TABS>
+
+function tabsShow(item, itemClass, tabClass) {
+  $(".tabs").each(function(i, val) {
+    var tab = $("[data-target=" + item + "]");
+    var attrTab = tab.attr("data-target");
+    if (attrTab == "all") {
+      $(tabClass).addClass("active");
+      $(tabClass).css("display", "block");
+    }
+    tab.addClass("active");
+    $(tabClass).css("display", "block");
+  });
+}
+var itemClass = $(".portfolio-body__item");
+var tabClass = $(".portfolio-main__tab");
+tabClass.addClass("active");
+$(itemClass).on("click", function(e) {
+  e.preventDefault();
+  var item = $(this).attr("data-target");
+  $(itemClass).removeClass("active");
+  $(tabClass).css("display", "none");
+  $(tabClass).removeClass("active");
+  $(this).addClass("active");
+  tabsShow(item, itemClass, tabClass);
+});
+// ? </TABS>
 
 });

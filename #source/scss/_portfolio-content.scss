@@ -98,4 +98,21 @@
   &__image {
     height: 100px;
   }
+
+  &__tab {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    bottom: -100px;
+    @include scale(2);
+    transition: all .4s linear;
+    &.active{
+      visibility: visible;
+      opacity: 1;
+      bottom: 0;
+      @include scale(1);
+    }
+  }
+
 }
+
