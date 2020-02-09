@@ -1273,20 +1273,17 @@ body {
   .portfolio-main__image {
     height: 100px; }
   .portfolio-main__tab {
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    position: relative;
-    bottom: -100px;
-    -webkit-transform: scale(2);
-    -ms-transform: scale(2);
-    transform: scale(2);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
     -webkit-transition: all .4s linear;
     -o-transition: all .4s linear;
     transition: all .4s linear; }
     .portfolio-main__tab.active {
-      visibility: visible;
+      display: block;
       opacity: 1;
-      bottom: 0;
       -webkit-transform: scale(1);
       -ms-transform: scale(1);
       transform: scale(1); }

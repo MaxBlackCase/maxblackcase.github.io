@@ -448,18 +448,19 @@ $(".resume-content").scroll(function() {
   }
 });
 
-// ? <TABS>
+// $('.tabs').forEach(i => {
+//   console.log('i', i);
+// });
 
+// ? <TABS>
 function tabsShow(item, itemClass, tabClass) {
-  $(".tabs").each(function(i, val) {
+  $(".tabs div").each(function(i, val) {
     var tab = $("[data-target=" + item + "]");
     var attrTab = tab.attr("data-target");
+    tab.addClass("active");
     if (attrTab == "all") {
       $(tabClass).addClass("active");
-      $(tabClass).css("display", "block");
     }
-    tab.addClass("active");
-    $(tabClass).css("display", "block");
   });
 }
 var itemClass = $(".portfolio-body__item");
@@ -467,12 +468,19 @@ var tabClass = $(".portfolio-main__tab");
 tabClass.addClass("active");
 $(itemClass).on("click", function(e) {
   e.preventDefault();
+
+  // $('.tabs div').each(function (i, val) { 
+  //   if (!$(this).hasClass('active')) {
+  //     $(this).fadeOut('slow');
+  //   }
+  // });
+
   var item = $(this).attr("data-target");
   $(itemClass).removeClass("active");
-  $(tabClass).css("display", "none");
   $(tabClass).removeClass("active");
   $(this).addClass("active");
   tabsShow(item, itemClass, tabClass);
+  
 });
 // ? </TABS>
 

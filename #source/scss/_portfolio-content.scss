@@ -100,19 +100,15 @@
   }
 
   &__tab {
+    display: none;
     opacity: 0;
-    visibility: hidden;
-    position: relative;
-    bottom: -100px;
-    @include scale(2);
+    @include scale(0);
     transition: all .4s linear;
     &.active{
-      visibility: visible;
+      display: block;
       opacity: 1;
-      bottom: 0;
       @include scale(1);
     }
+
   }
-
 }
-
