@@ -2,8 +2,6 @@
   @include flexbox;
   flex-direction: column;
   overflow-y: scroll;
-  &__column {
-  }
   &__education {
     z-index: 1;
     padding: 50px;
