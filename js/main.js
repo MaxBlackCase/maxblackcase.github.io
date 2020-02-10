@@ -454,30 +454,35 @@ $(".resume-content").scroll(function() {
 
 // ? <TABS>
 function tabsShow(item, itemClass, tabClass) {
-  $(".tabs div").each(function(i, val) {
+  $(".tabs > a").each(function(i, val) {
     var tab = $("[data-target=" + item + "]");
     var attrTab = tab.attr("data-target");
     tab.addClass("active");
-    if (attrTab == "all") {
-      $(tabClass).addClass("active");
+    if(attrTab == 'all'){
+      $(tabClass).addClass('active');
+    }
+    var value = $(val).hasClass('active');
+    if (value) {
+      $(val).show().animate({
+        opacity: 1,
+      }, 700, 'linear');
+    }else{
+      $(val).animate({
+        opacity: 0,
+      },600, 'linear',()=>{
+        $(this).css('display', 'none');
+      });
     }
   });
 }
 var itemClass = $(".portfolio-body__item");
 var tabClass = $(".portfolio-main__tab");
-tabClass.addClass("active");
+tabClass.addClass('active');
 $(itemClass).on("click", function(e) {
   e.preventDefault();
-
-  // $('.tabs div').each(function (i, val) { 
-  //   if (!$(this).hasClass('active')) {
-  //     $(this).fadeOut('slow');
-  //   }
-  // });
-
   var item = $(this).attr("data-target");
   $(itemClass).removeClass("active");
-  $(tabClass).removeClass("active");
+  $(tabClass).removeClass('active');
   $(this).addClass("active");
   tabsShow(item, itemClass, tabClass);
   

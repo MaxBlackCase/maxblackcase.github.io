@@ -1,9 +1,9 @@
 .portfolio-content {
   &__body {
-    @include flexbox;
+    display: flex;
     flex-direction: column;
     z-index: 1;
-    padding: 50px 35px;
+    padding: 50px 25px 15px 25px;
     width: 100%;
     background-color: #fff;
     @media (max-width: $md2) {
@@ -30,14 +30,22 @@
   }
 }
 .portfolio-body {
+  @include flexbox;
+  flex-direction: column;
+  height: 100%;
+
   &__menu {
     @include flexbox;
     flex-wrap: wrap;
     justify-content: center;
     margin: 0px 0px 20px 0px;
   }
+  &__main {
+  }
+  &__clear {
+    flex: 1 1 auto;
+  }
   &__item {
-    // max-width: 200px;
     flex: 0 0 (100% / 4);
     text-align: center;
     font-size: 18px;
@@ -68,47 +76,94 @@
       max-width: 350px;
       flex: 0 1 100%;
     }
-    &.active{
+    &.active {
       li {
         background-color: $mainColor;
         color: #fff;
       }
     }
   }
-
-  &__main {
-  }
 }
 
 .portfolio-main {
   @include flexbox;
   flex-wrap: wrap;
+  transition: all 0.4s ease;
   &__column {
-    flex: 0 0 (100% / 3);
+    flex: 0 1 (100% / 3);
     padding: 5px;
     img {
     }
     @media (max-width: $md2) {
-      flex: 0 0 (100% / 2);
+      flex: 0 1 (100% / 2);
     }
     @media (max-width: $md4) {
-      flex: 0 0 100%;
+      flex: 0 1 100%;
     }
   }
   &__image {
-    height: 100px;
+    max-width: 360px;
+    max-height: 300px;
   }
 
   &__tab {
-    display: none;
-    opacity: 0;
-    @include scale(0);
-    transition: all .4s linear;
-    &.active{
-      display: block;
-      opacity: 1;
-      @include scale(1);
+    position: relative;
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    transform: scale(0) rotate(360deg);
+    overflow: hidden;
+    z-index: 1;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      @include trans;
+    }
+    &:hover {
+      cursor: pointer;
+      &::before {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+        @include trans;
+      }
+      span{
+        opacity: 1;
+        transform: scale(1);
+      }
     }
 
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      opacity: 0;
+      @include trans;
+      transform: scale(4);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      z-index: 2;
+      background: #fff;
+      i {
+        font-size: 16px;
+        line-height: 40px;
+        color: #5c5c5c;
+      }
+    }
+    &.active {
+      opacity: 1;
+      transition: all 0.5s ease;
+      transform: scale(1) rotate(0);
+    }
   }
+}
+
+.portfolio-body {
 }
