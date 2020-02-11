@@ -871,6 +871,8 @@ body {
   .resume-content__copyright {
     background: #0080ff;
     color: #fff; }
+  .resume-content .copyright {
+    z-index: 2; }
 
 .education-resume {
   display: -webkit-box;
@@ -1123,9 +1125,6 @@ body {
     -ms-flex-direction: column;
     flex-direction: column;
     margin: 25px 0px 25px 0px; }
-  .skills-resume__chart canvas {
-    width: 150px !important;
-    height: 150px !important; }
   .skills-resume__title {
     text-align: center;
     font-size: 18px;

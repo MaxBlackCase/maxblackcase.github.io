@@ -1,3 +1,5 @@
+var counter = 0;
+
 $(".right-block__column").on("click", function(e) {
   e.preventDefault();
 
@@ -32,13 +34,12 @@ $(".close").on("click", function(e) {
   $(".wrapper__row").removeClass("active");
 });
 
+// ? <easyPieChart>
 var elem = $(".skills-resume");
-$counter = 0;
-$(".resume-content").scroll(function() {
+$(".resume-content, .resume").scroll(function() {
   var scroll = $(this).scrollTop() + $(this).height();
   var offset = elem.offset().top + elem.height();
-  if (scroll > offset && $counter == 0) {
-    console.log("Hi", "Hi");
+  if (scroll > offset && counter == 0) {
     $(".chart").easyPieChart({
       barColor: "#0080ff",
       trackColor: "rgba(0, 128, 255, .2)",
@@ -49,9 +50,10 @@ $(".resume-content").scroll(function() {
         enabled: true
       }
     });
-    $counter = 1;
+    counter = 1;
   }
 });
+// ? </easyPieChart>
 
 // ? <TABS>
 function tabsShow(item, itemClass, tabClass) {

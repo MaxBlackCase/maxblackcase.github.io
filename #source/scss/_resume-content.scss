@@ -54,6 +54,9 @@
     background: $mainColor;
     color: #fff;
   }
+  .copyright{
+    z-index: 2;
+  }
 }
 .education-resume {
   @include flexbox;
@@ -254,12 +257,12 @@
     margin: 25px 0px 25px 0px;
     
   }
-  &__chart {
-    canvas{
-      width: 150px !important;
-      height: 150px !important;
-    }
-  }
+  // &__chart {
+  //   canvas{
+  //     width: 150px !important;
+  //     height: 150px !important;
+  //   }
+  // }
   &__title {
     text-align: center;
     font-size: 18px;
