@@ -438,8 +438,7 @@ $(".resume-content, .resume").scroll(function() {
     $(".chart").easyPieChart({
       barColor: "#0080ff",
       trackColor: "rgba(0, 128, 255, .2)",
-      scaleColor: "rgba(0, 128, 255, .6)",
-      scaleLength: 8,
+      scaleLength: 0,
       animate: {
         duration: 2500,
         enabled: true
@@ -448,9 +447,9 @@ $(".resume-content, .resume").scroll(function() {
     counter = 1;
   }
 });
-// ? </easyPieChart>
+// * </easyPieChart>
 
-// ? <TABS>
+// * <TABS>
 function tabsShow(item, itemClass, tabClass) {
   $(".tabs > .portfolio-main__tab").each(function(i, val) {
     var tab = $("[data-target=" + item + "]");
@@ -485,6 +484,7 @@ $(itemClass).on("click", function(e) {
   tabsShow(item, itemClass, tabClass);
   
 });
-// ? </TABS>
+// * </TABS>
 
+// 
 });
