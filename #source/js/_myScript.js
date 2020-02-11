@@ -59,7 +59,7 @@ $(".resume-content").scroll(function() {
 
 // ? <TABS>
 function tabsShow(item, itemClass, tabClass) {
-  $(".tabs > a").each(function(i, val) {
+  $(".tabs > .portfolio-main__tab").each(function(i, val) {
     var tab = $("[data-target=" + item + "]");
     var attrTab = tab.attr("data-target");
     tab.addClass("active");
