@@ -33,3 +33,85 @@
   }
 }
 
+@keyframes preloadTopLeftCube {
+  0%,
+  20% {
+    top: 0px;
+    left: 0;
+    @include rotate(0);
+  }
+  55% {
+    left: -25px;
+    top: -25px;
+  }
+  100% {
+    top: 0px;
+    left: 0;
+    @include rotate(-90);
+  }
+}
+@keyframes preloadTopRightCube {
+  0%,
+  20% {
+    top: 0px;
+    left: 0;
+    @include rotate(0);
+  }
+  55% {
+    left: 25px;
+    top: -25px;
+  }
+  100% {
+    top: 0px;
+    left: 0;
+    @include rotate(90);
+  }
+}
+@keyframes preloadBottomLeftCube {
+  0%,
+  20% {
+    bottom: 0px;
+    left: 0;
+    @include rotate(0);
+  }
+  55% {
+    left: -25px;
+    bottom: -25px;
+  }
+  100% {
+    bottom: 0px;
+    left: 0;
+    @include rotate(-90);
+  }
+}
+@keyframes preloadBottomRightCube {
+  0%,
+  20% {
+    bottom: 0px;
+    left: 0;
+    @include rotate(0);
+  }
+  55% {
+    left: 25px;
+    bottom: -25px;
+  }
+  100% {
+    bottom: 0px;
+    left: 0;
+    @include rotate(90);
+  }
+}
+@keyframes rotatePreloader {
+  0%{
+    @include rotate(0);
+  }
+  40%{
+    @include rotate(360);
+  }
+  80%{
+    @include rotate(-360);
+  }
+  100% {
+    @include rotate(0);
+  }
+}

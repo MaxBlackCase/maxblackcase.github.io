@@ -90,5 +90,3 @@ $(itemClass).on("click", function(e) {
   
 });
 // * </TABS>
-
-// 

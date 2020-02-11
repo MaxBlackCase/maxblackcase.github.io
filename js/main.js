@@ -1,9 +1,26 @@
+//? @prepros-append preloader.js
 //? @prepros-append jq-start.js
 
 //? @prepros-append _script.js
 //? @prepros-append _myScript.js
 
 //? @prepros-append jq-end.js
+
+// * <PRELOADER>
+
+function preloader() {
+  $(() => {
+    setInterval(() => {
+
+      let p = $(".preloader");
+      p.fadeOut(1500);;
+
+    }, 1500);
+  });
+}
+
+preloader();
+// * </PRELOADER>
 
 $(document).ready(function () {
 var isMobile = {
@@ -486,5 +503,4 @@ $(itemClass).on("click", function(e) {
 });
 // * </TABS>
 
-// 
 });
