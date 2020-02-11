@@ -23,6 +23,7 @@ body {
   color: $mainFontColor;
   font-weight: 400;
   font-style: normal;
+  @include trans;
 }
 
 .wrapper {
