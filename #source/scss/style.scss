@@ -1,17 +1,21 @@
 // ? <FONTS>
-@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,600,700,900&display=swap&subset=cyrillic');
+@import url("https://fonts.googleapis.com/css?family=Vollkorn:400,600,700,900&display=swap&subset=cyrillic");
 // ? </FONTS>
 @import "./_zeroing";
 @import "./_mixins";
 @import "./_var";
 @import "./_palette";
 
-::-webkit-scrollbar{
+// ? <KEYFRAMES>
+@import "./_keyframes";
+// ? </KEYFRAMES>
+
+::-webkit-scrollbar {
   z-index: 2;
   width: 8px;
   background: #212121;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #0080ff;
   border: 2px solid #212121;
 }
@@ -25,7 +29,9 @@ body {
   font-style: normal;
   @include trans;
 }
-.ymaps-2-1-75-controls__toolbar{display: none;}
+.ymaps-2-1-75-controls__toolbar {
+  display: none;
+}
 .wrapper {
   position: relative;
   width: 100%;
@@ -67,7 +73,7 @@ body {
     @media (max-width: $md4) {
       flex-direction: column;
     }
-    &.active{
+    &.active {
       visibility: hidden;
     }
   }
@@ -98,7 +104,7 @@ body {
     }
   }
 
-  .close{
+  .close {
     position: absolute;
     display: flex;
     justify-content: center;
@@ -109,20 +115,20 @@ body {
     right: 15px;
     visibility: hidden;
     z-index: 2;
-    &.active{
+    &.active {
       visibility: visible;
     }
     cursor: pointer;
-    span{
+    span {
       position: absolute;
       display: block;
       height: 3px;
       width: 32px;
       background-color: #000;
-      &:first-child{
+      &:first-child {
         @include rotate(-45);
       }
-      &:last-child{
+      &:last-child {
         @include rotate(45);
       }
       @media (max-width: $md3) {
@@ -133,13 +139,13 @@ body {
       }
     }
     @media (max-width: $md3) {
-      background-color: rgba($color: #212121, $alpha: .5);
+      background-color: rgba($color: #212121, $alpha: 0.5);
       border-radius: 50%;
     }
   }
 
-  .content{
-    &__row{
+  .content {
+    &__row {
       position: absolute;
       top: 0;
       left: 0;
@@ -148,7 +154,6 @@ body {
 }
 
 // ? <MAIN>
-@import './_preloader';
 @import "./_leftBlock";
 @import "./_rightBlock";
 // ? </MAIN>
@@ -161,12 +166,13 @@ body {
 @import "./_contacts-content";
 // ? </CONTENT>
 
-// ? <KEYFRAMES>
-@import "./_keyframes";
-// ? </KEYFRAMES>
+// * <KEYFRAMES>
+@import './keyframes';
+// * </KEYFRAMES>
 
-@media (max-width: 1200px){
-  .ymaps-2-1-75-map,.ymaps-2-1-75-map ymaps-2-1-75-i-ua_js_yes ymaps-2-1-75-map-bg ymaps-2-1-75-islets_map-lang-ru{
+@media (max-width: 1200px) {
+  .ymaps-2-1-75-map,
+  .ymaps-2-1-75-map ymaps-2-1-75-i-ua_js_yes ymaps-2-1-75-map-bg ymaps-2-1-75-islets_map-lang-ru {
     max-width: 562px !important;
   }
 }
