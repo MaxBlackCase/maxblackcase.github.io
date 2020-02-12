@@ -11,5 +11,7 @@ function preloader() {
   });
 }
 
-preloader();
+$(document).ready(function () {
+  preloader();
+});
 // * </PRELOADER>
