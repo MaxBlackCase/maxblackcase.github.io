@@ -1,5 +1,5 @@
 // ? <FONTS>
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700,800,900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Vollkorn:400,600,700,900&display=swap&subset=cyrillic');
 // ? </FONTS>
 @import "./_zeroing";
 @import "./_mixins";
@@ -19,7 +19,7 @@
 body {
   height: 100%;
   background-color: $primaryBg;
-  font-family: "Fira Sans";
+  font-family: "Vollkorn", Arial, Helvetica, sans-serif;
   color: $mainFontColor;
   font-weight: 400;
   font-style: normal;

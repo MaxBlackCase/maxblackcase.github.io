@@ -4,8 +4,7 @@
   background-color: #fff;
   color: $fontProtfolio;
   overflow-y: scroll;
-  &:scroll
-  &__body {
+  &:scroll &__body {
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -16,7 +15,7 @@
     justify-content: center;
     align-items: center;
     padding: 50px 25px 15px 25px;
-    h2{
+    h2 {
       font-size: 32px;
       font-weight: normal;
       line-height: 32px;
@@ -32,16 +31,17 @@
     margin: 0px 0px 25px 0px;
   }
 
-  &__input,&__textarea {
+  &__input,
+  &__textarea {
     border: 1px solid $mainColor;
     padding: 10px;
     margin: 0px 0px 15px 0px;
     border-radius: 5px;
-    &::placeholder{
+    &::placeholder {
       @include trans;
     }
-    &:focus{
-      &::placeholder{
+    &:focus {
+      &::placeholder {
         opacity: 0;
       }
     }
@@ -49,10 +49,10 @@
 
   &__textarea {
     resize: none;
-    &::-webkit-scrollbar{
-      background: rgba($color: $mainColor, $alpha: .2);
+    &::-webkit-scrollbar {
+      background: rgba($color: $mainColor, $alpha: 0.2);
     }
-    &::-webkit-scrollbar-thumb{
+    &::-webkit-scrollbar-thumb {
       background-color: $mainColor;
       border: 2px solid $mainColor;
     }
@@ -70,10 +70,19 @@
     @include trans;
     cursor: pointer;
     border-radius: 5px;
-    &:hover{
+    &:hover {
       background-color: $mainColor;
       border: 1px solid #fff;
       color: #fff;
+    }
+  }
+
+  &__map {
+    padding: 0 25px;
+    margin: 0px 0px 25px 0px;
+    #map {
+      width: 100%;
+      height: 400px;
     }
   }
 
@@ -96,21 +105,11 @@
     background-color: $mainColor;
     color: #fff;
   }
-  &__clear{
+  &__clear {
     flex: 1 1 auto;
   }
 }
 .socials {
   &__bg {
-  }
-}
-
-
-
-.map {
-  margin: 0px 0px 25px 0px;
-  &__container {
-    width: 100%;
-    height: 400px;
   }
 }

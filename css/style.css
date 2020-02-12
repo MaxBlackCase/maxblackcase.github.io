@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,600,700,800,900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Vollkorn:400,600,700,900&display=swap&subset=cyrillic");
 *, *::before, *::after {
   padding: 0;
   margin: 0;
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h5 {
 body {
   height: 100%;
   background-color: #212121;
-  font-family: "Fira Sans";
+  font-family: "Vollkorn", Arial, Helvetica, sans-serif;
   color: #dcdcdc;
   font-weight: 400;
   font-style: normal;
@@ -1525,6 +1525,12 @@ body {
       background-color: #0080ff;
       border: 1px solid #fff;
       color: #fff; }
+  .contacts-content__map {
+    padding: 0 25px;
+    margin: 0px 0px 25px 0px; }
+    .contacts-content__map #map {
+      width: 100%;
+      height: 400px; }
   .contacts-content__copyright {
     background-color: #0080ff;
     color: #fff; }
@@ -1532,12 +1538,6 @@ body {
     -webkit-box-flex: 1;
     -ms-flex: 1 1 auto;
     flex: 1 1 auto; }
-
-.map {
-  margin: 0px 0px 25px 0px; }
-  .map__container {
-    width: 100%;
-    height: 400px; }
 
 @-webkit-keyframes item-icon-after {
   0% {

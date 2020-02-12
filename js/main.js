@@ -1,22 +1,25 @@
+//? @prepros-append jq-start.js
+
 //? @prepros-append map.js
 //? @prepros-append preloader.js
-//? @prepros-append ready.js
-
-//? @prepros-append jq-start.js
 
 //? @prepros-append _script.js
 //? @prepros-append _myScript.js
 
 //? @prepros-append jq-end.js
 
+$(document).ready(function () {
 // * key: AIzaSyBtWEMsi-xvxXgnSlRn32KMnzOY1NYggzc
 
-var map;
 function initMap() {
-  map = new google.maps.Map(document.getElementById("gMap"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8
+  var cord = { lat: 53.507947, lng: 49.421353 };
+
+  var map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: cord
   });
+  
+  var marker = new google.maps.Marker({ position: cord, map: map });
 }
 
 // * <PRELOADER>
@@ -30,11 +33,9 @@ function preloader() {
 }
 // * </PRELOADER>
 
-$(document).ready(function () {
-  preloader();
-  initMap();
-});
-$(document).ready(function () {
+preloader();
+initMap();
+
 var isMobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);
