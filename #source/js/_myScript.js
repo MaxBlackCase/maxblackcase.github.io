@@ -32,6 +32,10 @@ $(".close").on("click", function(e) {
   $(".right-column").removeClass("active");
   $(".close").removeClass("active");
   $(".wrapper__row").removeClass("active");
+  $('.contacts-content__map').removeClass('active');
+  $('.contacts-content__map > #map').fadeOut('slow', function(){
+    $('#map').html(' ');
+  });
 });
 
 // ? <easyPieChart>

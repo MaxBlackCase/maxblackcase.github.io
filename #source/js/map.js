@@ -1,7 +1,11 @@
 
 
 $('a[data-target="contacts"]').on('click', function () {
-  ymaps.load(init);
+  if (!$('.contacts-content__map').hasClass('active')) {
+    ymaps.load(init);
+    $('.contacts-content__map').addClass('active');
+    $('.contacts-content__map > #map').fadeIn('fast');
+  }
 });
 
 function init() {
