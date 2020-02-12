@@ -64,12 +64,6 @@ if ($(".gallery").length > 0) {
     // Custom options
   });
 }
-/*
-CLOUD-ZOOM
-<a rel="position:'right',adjustX:25,adjustY:0,Width: 432" href="img/product/zoom.jpg" class="cloud-zoom product-main-mainimage__item">
-	<img class="cloudzoom-gallery" src="img/product/zoom.jpg" alt="" />
-</a>
-*/
 
 //POPUP
 $(".pl").click(function(event) {

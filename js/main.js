@@ -1,5 +1,7 @@
 //? @prepros-append map.js
 //? @prepros-append preloader.js
+//? @prepros-append ready.js
+
 //? @prepros-append jq-start.js
 
 //? @prepros-append _script.js
@@ -7,39 +9,31 @@
 
 //? @prepros-append jq-end.js
 
-ymaps.ready(init);
-function init() {
-  // Создание карты.
-  var myMap = new ymaps.Map("map", {
-    // Координаты центра карты.
-    // Порядок по умолчанию: «широта, долгота».
-    // Чтобы не определять координаты центра карты вручную,
-    // воспользуйтесь инструментом Определение координат.
-    center: [55.76, 37.64],
-    // Уровень масштабирования. Допустимые значения:
-    // от 0 (весь мир) до 19.
-    zoom: 7
+// * key: AIzaSyBtWEMsi-xvxXgnSlRn32KMnzOY1NYggzc
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById("gMap"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 8
   });
 }
 
 // * <PRELOADER>
-
 function preloader() {
-  $(() => {
     setInterval(() => {
 
       let p = $(".preloader");
       p.fadeOut(1500);;
 
     }, 1500);
-  });
 }
+// * </PRELOADER>
 
 $(document).ready(function () {
   preloader();
+  initMap();
 });
-// * </PRELOADER>
-
 $(document).ready(function () {
 var isMobile = {
   Android: function() {
@@ -107,12 +101,6 @@ if ($(".gallery").length > 0) {
     // Custom options
   });
 }
-/*
-CLOUD-ZOOM
-<a rel="position:'right',adjustX:25,adjustY:0,Width: 432" href="img/product/zoom.jpg" class="cloud-zoom product-main-mainimage__item">
-	<img class="cloudzoom-gallery" src="img/product/zoom.jpg" alt="" />
-</a>
-*/
 
 //POPUP
 $(".pl").click(function(event) {
