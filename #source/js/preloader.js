@@ -3,7 +3,7 @@ function preloader() {
     setInterval(() => {
 
       let p = $(".preloader");
-      p.fadeOut(1500);;
+      p.fadeOut(600);;
 
     }, 1500);
 }

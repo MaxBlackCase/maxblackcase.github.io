@@ -1,7 +1,6 @@
 //? @prepros-append jq-start.js
-
-//? @prepros-append map.js
 //? @prepros-append preloader.js
+//? @prepros-append map.js
 
 //? @prepros-append _script.js
 //? @prepros-append _myScript.js
@@ -9,33 +8,48 @@
 //? @prepros-append jq-end.js
 
 $(document).ready(function () {
-// * key: AIzaSyBtWEMsi-xvxXgnSlRn32KMnzOY1NYggzc
-
-function initMap() {
-  var cord = { lat: 53.507947, lng: 49.421353 };
-
-  var map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: cord
-  });
-  
-  var marker = new google.maps.Marker({ position: cord, map: map });
-}
-
 // * <PRELOADER>
 function preloader() {
     setInterval(() => {
 
       let p = $(".preloader");
-      p.fadeOut(1500);;
+      p.fadeOut(600);;
 
     }, 1500);
 }
 // * </PRELOADER>
 
-preloader();
-initMap();
+ymaps.ready(init);
+function init() {
+  // Создание карты.
+  var myMap = new ymaps.Map("map", {
+    center: [53.5088, 49.41918],
+    zoom: 9
+  });
+  myMap.behaviors.disable(["rightMouseButtonMagnifier"]);
+  myMap.controls.remove("zoomControl");
+  myMap.controls.remove("trafficControl");
+  myMap.controls.remove("geolocationControl");
+  myMap.controls.remove("typeSelector");
+  myMap.controls.remove("fullscreenControl");
+  myMap.controls.remove("rulerControl");
+  var myMarker = new ymaps.Placemark(
+    myMap.getCenter(),
+    {
+      hintContent: "myPlacemark",
+      balloonContent: "Тольятти"
+    },
+    {
+      iconLayout: "default#image",
+      iconImageHref: "../img/contacts/icon/01.png",
+      iconImageSize: [32, 32],
+      iconImageOffset: [-20, -50]
+    }
+  );
+  myMap.geoObjects.add(myMarker);
+}
 
+preloader();
 var isMobile = {
   Android: function() {
     return navigator.userAgent.match(/Android/i);
