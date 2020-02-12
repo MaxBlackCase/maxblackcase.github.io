@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
     integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=24291f1a-35c7-4821-843b-0edae3954579&lang=ru_RU" type="text/javascript">
+  </script>
 </head>
 
 <body>
@@ -364,6 +366,9 @@
               required></textarea>
             <a class="contacts-content__submit" type="submit">Отправить</a>
           </form>
+          <div class="contacts-content__map map">
+            <div class="map_container" id="map" style="width: 100%; height: 400;"></div>
+          </div>
           <div class="contacts-content__data">
             <div class="contacts-content__column">
               <div class="contacts-content__icon">

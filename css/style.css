@@ -1475,7 +1475,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 25px 25px 25px 25px;
+    padding: 25px 45px;
     background-color: #0080ff; }
   .contacts-content__input, .contacts-content__textarea {
     border: 1px solid #0080ff;
