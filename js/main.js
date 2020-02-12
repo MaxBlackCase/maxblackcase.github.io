@@ -436,6 +436,10 @@ $(".close").on("click", function(e) {
   $(".right-column").removeClass("active");
   $(".close").removeClass("active");
   $(".wrapper__row").removeClass("active");
+  $('.contacts-content__map').removeClass('active');
+  $('.contacts-content__map > #map').fadeOut('slow', function(){
+    $('#map').html(' ');
+  });
 });
 
 // ? <easyPieChart>
@@ -498,7 +502,11 @@ $(itemClass).on("click", function(e) {
 
 
 $('a[data-target="contacts"]').on('click', function () {
-  ymaps.load(init);
+  if (!$('.contacts-content__map').hasClass('active')) {
+    ymaps.load(init);
+    $('.contacts-content__map').addClass('active');
+    $('.contacts-content__map > #map').fadeIn('fast');
+  }
 });
 
 function init() {
