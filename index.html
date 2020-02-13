@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
     integrity="sha384-REHJTs1r2ErKBuJB0fCK99gCYsVjwxHrSU0N7I1zl9vZbggVJXRMsv/sLlOAGb4M" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.min.css">
+  <script src="https://api-maps.yandex.ru/2.1/?loadByRequire=1&apikey=24291f1a-35c7-4821-843b-0edae3954579&lang=ru_RU" type="text/javascript"></script>
 </head>
 
 <body>
@@ -354,7 +355,7 @@
       <div class="contacts-content">
         <div class="contacts-content__body">
           <div class="contacts-content__title">
-            <h2>Заголовок</h2>
+            <h2>Обратная связь</h2>
           </div>
           <form class="contacts-content__form">
             <input class="contacts-content__input" name="name" type="text" autocomplete="off" placeholder="Ваше имя"
@@ -365,22 +366,38 @@
               required></textarea>
             <button class="contacts-content__submit" type="submit">Отправить</button>
           </form>
+          <div class="contacts-content__title">
+            <h2>Местоположение</h2>
+          </div>
           <div class="contacts-content__map">
             <div id="map"></div>
           </div>
-          <div class="contacts-content__data">
-            <div class="contacts-content__column">
-              <div class="contacts-content__icon">
-                <i class="fas fa-"></i>
-              </div>
-              <div class="contacts-content__text">
-                <p></p>
-              </div>
-            </div>
-          </div>
           <div class="contacts-content__socials socials">
             <div class="socials__bg">
-              <i class="fas fa-"></i>
+              <div class="socials__box">
+                <a href="tel:89372361797">
+                  <span>Телефон</span>
+                  <i class="fas fa-phone"></i>
+                </a>
+              </div>
+              <div class="socials__box">
+                <a href="maito:maxblackcase@gmail.com">
+                  <span>Почта</span>
+                  <i class="fas fa-envelope"></i>
+                </a>
+              </div>
+              <div class="socials__box">
+                <a href="https://vk.com/dark_night_black" target="_blank">
+                  <span>Вконтакте</span>
+                  <i class="fab fa-vk"></i>
+                </a>
+              </div>
+              <div class="socials__box">
+                <a href="https://t.me/DarkKnife" target="_blank">
+                  <span>Телеграм</span>
+                  <i class="fab fa-telegram-plane"></i>
+                </a>
+              </div>
             </div>
           </div>
           <div class="contacts-content__clear"></div>
@@ -469,7 +486,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./js/jquery.easypiechart.min.js"></script>
   <script src="./js/main.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?loadByRequire=1&apikey=24291f1a-35c7-4821-843b-0edae3954579&lang=ru_RU" type="text/javascript"></script>
 </body>
 
 </html>

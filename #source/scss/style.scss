@@ -170,9 +170,3 @@ body {
 @import './keyframes';
 // * </KEYFRAMES>
 
-@media (max-width: 1200px) {
-  .ymaps-2-1-75-map,
-  .ymaps-2-1-75-map ymaps-2-1-75-i-ua_js_yes ymaps-2-1-75-map-bg ymaps-2-1-75-islets_map-lang-ru {
-    max-width: 562px !important;
-  }
-}
