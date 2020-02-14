@@ -101,7 +101,7 @@ $(form).on('submit', function (e) {
   e.preventDefault();
   $.ajax({
     type: "POST",
-    url: "http://maxblackcase.rf.gd/mail.php",
+    url: "https://maxblackcase.rf.gd/mail.php",
     data: $(this).serialize(),
     dataType: "html",
     success: function (result) {
