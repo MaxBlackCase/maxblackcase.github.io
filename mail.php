@@ -29,7 +29,6 @@ try {
   $mail->setFrom('maxblackcase@gmail.com', 'Admin');
   $mail->addAddress('bladro0987@gmail.com', 'Max Black');     //
 
-
   // Content
   $mail->isHTML(true);                                  // Set email format to HTML
   $mail->Subject = 'Ответ на резюме с сайта';
