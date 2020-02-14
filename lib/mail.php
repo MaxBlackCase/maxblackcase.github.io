@@ -1,4 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
 <?php
+
+header('Access-Control-Allow-Origin: *');
 
 $data = filter_input_array(INPUT_POST);
 
@@ -7,9 +23,9 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 // Load Composer's autoloader
-require './lib/PHPMailer/src/PHPMailer.php';
-require './lib/PHPMailer/src/SMTP.php';
-require './lib/PHPMailer/src/Exception.php';
+require './PHPMailer/src/PHPMailer.php';
+require './PHPMailer/src/SMTP.php';
+require './PHPMailer/src/Exception.php';
 
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);

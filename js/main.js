@@ -505,8 +505,12 @@ $(form).on('submit', function (e) {
   e.preventDefault();
   $.ajax({
     type: "POST",
-    url: "https://maxblackcase.rf.gd/mail.php",
+    url: "http://drive.google.com/file/d/1N26oBrBlu6oSmVsuUvPeRnV4G5LEK1Re/view?usp=sharing",
     data: $(this).serialize(),
+    contentType : 'text / plain' ,
+    xhrFields: {
+      withCredentials: true
+    },
     dataType: "html",
     success: function (result) {
       console.log('result:', result);
@@ -516,6 +520,8 @@ $(form).on('submit', function (e) {
   });
 });
 // * </MAIL>
+
+$.get('http://maxblackcase.rf.gd/mail.php', function(responce) {console.log(responce)});
 
 
 $('a[data-target="contacts"]').on('click', function () {
