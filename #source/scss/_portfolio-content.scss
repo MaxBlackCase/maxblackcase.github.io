@@ -18,7 +18,7 @@
     @include flexbox;
     justify-content: center;
     align-items: center;
-    font-size: 32px;
+    font-size: $h2Size;
     font-weight: 500;
     margin: 0px 0px 35px 0px;
     &_b {

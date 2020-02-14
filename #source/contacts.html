@@ -12,14 +12,14 @@
           <div class="contacts-content__title">
             <h2>Обратная связь</h2>
           </div>
-          <form class="contacts-content__form">
+          <form class="contacts-content__form" id="formMail">
             <input class="contacts-content__input" name="name" type="text" autocomplete="off" placeholder="Ваше имя"
               required>
             <input class="contacts-content__input" type="email" name="email" autocomplete="off" placeholder="Ваш email"
               required>
             <textarea class="contacts-content__textarea" name="message" cols="20" rows="10" placeholder="Ваше сообщение"
               required></textarea>
-            <button class="contacts-content__submit" type="submit">Отправить</button>
+            <button class="contacts-content__submit" type="submit" name="sub">Отправить</button>
           </form>
           <div class="contacts-content__title">
             <h2>Местоположение</h2>
@@ -27,6 +27,7 @@
           <div class="contacts-content__map">
             <div id="map"></div>
           </div>
+          <!-- <div class="contacts-content__clear"></div> -->
           <div class="contacts-content__socials socials">
             <div class="socials__bg">
               <div class="socials__box">
@@ -55,7 +56,6 @@
               </div>
             </div>
           </div>
-          <div class="contacts-content__clear"></div>
           <div class="contacts-content__copyright copyright">
             <div class="copyright__column copyright_name">Max Black</div>
             <div class="copyright__column  copyright_company">

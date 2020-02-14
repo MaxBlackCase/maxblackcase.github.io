@@ -94,3 +94,21 @@ $(itemClass).on("click", function(e) {
   
 });
 // * </TABS>
+
+// * <MAIL>
+var form = $('#formMail');
+$(form).on('submit', function (e) { 
+  e.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "http://maxblackcase.rf.gd/mail.php",
+    data: $(this).serialize(),
+    dataType: "html",
+    success: function (result) {
+      console.log('result:', result);
+      $('.contacts-content__submit').html('');
+      $('.contacts-content__submit').fadeIn('slow', function () {$(this).html('отправлено').css('color','green');});
+    }
+  });
+});
+// * </MAIL>
