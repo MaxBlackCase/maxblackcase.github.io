@@ -543,7 +543,7 @@ $(itemClass).on("click", function(e) {
 
 // * <MAIL>
 // const requestURL = 'http://maxblackcase.rf.gd/mail.php'
-const requestURL = 'https://f0402948.xsph.ru/mail.php'
+const requestURL = 'https://maxblackcase.000webhostapp.com/mail.php'
 var form = $('#formMail')
 $(form).on('submit', function (e) {
   e.preventDefault()
