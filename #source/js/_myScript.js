@@ -147,10 +147,7 @@ $(form).on('submit', function (e) {
     url: requestURL,
     data: $(this).serialize(),
     crossDomain: true,
-    xhrFields: {
-      withCredentials: true
-    },
-    dataType: "html",
+    dataType: "jsonp",
     success: function (result) {
       console.log('result:', result)
       $('.contacts-content__submit').html('')
