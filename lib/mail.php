@@ -1,3 +1,6 @@
+<?php
+header('Access-Control-Allow-Origin: *');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,8 +16,6 @@
 
 </html>
 <?php
-
-header('Access-Control-Allow-Origin: *');
 
 $data = filter_input_array(INPUT_POST);
 

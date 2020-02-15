@@ -32,9 +32,9 @@ $(".close").on("click", function(e) {
   $(".right-column").removeClass("active");
   $(".close").removeClass("active");
   $(".wrapper__row").removeClass("active");
-  $('.contacts-content__map').removeClass('active');
-  $('.contacts-content__map > #map').fadeOut('slow', function(){
-    $('#map').html(' ');
+  $(".contacts-content__map").removeClass("active");
+  $(".contacts-content__map > #map").fadeOut("slow", function() {
+    $("#map").html(" ");
   });
 });
 
@@ -64,57 +64,98 @@ function tabsShow(item, itemClass, tabClass) {
     var tab = $("[data-target=" + item + "]");
     var attrTab = tab.attr("data-target");
     tab.addClass("active");
-    if(attrTab == 'all'){
-      $(tabClass).addClass('active');
+    if (attrTab == "all") {
+      $(tabClass).addClass("active");
     }
-    var value = $(val).hasClass('active');
+    var value = $(val).hasClass("active");
     if (value) {
-      $(val).show().animate({
-        opacity: 1,
-      }, 700, 'linear');
-    }else{
-      $(val).animate({
-        opacity: 0,
-      },600, 'linear',()=>{
-        $(this).css('display', 'none');
-      });
+      $(val)
+        .show()
+        .animate(
+          {
+            opacity: 1
+          },
+          700,
+          "linear"
+        );
+    } else {
+      $(val).animate(
+        {
+          opacity: 0
+        },
+        600,
+        "linear",
+        () => {
+          $(this).css("display", "none");
+        }
+      );
     }
   });
 }
 var itemClass = $(".portfolio-body__item");
 var tabClass = $(".portfolio-main__tab");
-tabClass.addClass('active');
+tabClass.addClass("active");
 $(itemClass).on("click", function(e) {
   e.preventDefault();
   var item = $(this).attr("data-target");
   $(itemClass).removeClass("active");
-  $(tabClass).removeClass('active');
+  $(tabClass).removeClass("active");
   $(this).addClass("active");
   tabsShow(item, itemClass, tabClass);
-  
 });
 // * </TABS>
 
+// * <XHR>
+// function sendRequest(method, url, body = null) {
+//   return new Promise((resolve, reject) => {
+//     const xhr = new XMLHttpRequest()
+//     xhr.open(method, url)
+//     xhr.responseType = "json"
+//     xhr.setRequestHeader('Content-Type', 'application/json')
+//     xhr.onload = () => {
+//       if (xhr.status >= 400) {
+//         reject(xhr.response);
+//       } else {
+//         resolve(xhr.response);
+//       }
+//     };
+//     xhr.onerror = () => {
+//       reject("object", xhr.response);
+//     };
+
+//     xhr.send(JSON.stringify(body));
+//   });
+// }
+
+// const body = {
+//   name: 'Vladilen',
+//   age: 26
+// }
+
+// sendRequest("POST", requestURL, body)
+// .then(data => console.log('object', data))
+// .catch(err => console.log('object', err))
+// * </XHR>
+
 // * <MAIL>
-var form = $('#formMail');
-$(form).on('submit', function (e) { 
-  e.preventDefault();
+const requestURL = 'http://maxblackcase.rf.gd/index/php'
+var form = $('#formMail')
+$(form).on('submit', function (e) {
+  e.preventDefault()
   $.ajax({
     type: "POST",
-    url: "http://drive.google.com/file/d/1N26oBrBlu6oSmVsuUvPeRnV4G5LEK1Re/view?usp=sharing",
+    url: requestURL,
     data: $(this).serialize(),
-    contentType : 'text / plain' ,
+    crossDomain: true,
     xhrFields: {
       withCredentials: true
     },
     dataType: "html",
     success: function (result) {
-      console.log('result:', result);
-      $('.contacts-content__submit').html('');
-      $('.contacts-content__submit').fadeIn('slow', function () {$(this).html('отправлено').css('color','green');});
+      console.log('result:', result)
+      $('.contacts-content__submit').html('')
+      $('.contacts-content__submit').fadeIn('slow', function () {$(this).html('отправлено').css('color','green')})
     }
-  });
-});
+  })
+})
 // * </MAIL>
-
-$.get('http://maxblackcase.rf.gd/mail.php', function(responce) {console.log(responce)});
