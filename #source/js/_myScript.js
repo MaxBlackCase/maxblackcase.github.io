@@ -151,7 +151,6 @@ $(form).on('submit', function (e) {
     cache: false,
     crossDomain: true,
     success: function (result) {
-      console.log('result:', result)
       $('.contacts-content__submit').html('')
       $('.contacts-content__submit').fadeIn('slow', function () {$(this).html('отправлено').css('color','green')})
     }
