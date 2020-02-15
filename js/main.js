@@ -542,16 +542,18 @@ $(itemClass).on("click", function(e) {
 // * </XHR>
 
 // * <MAIL>
-const requestURL = 'http://maxblackcase.rf.gd/index/php'
+// const requestURL = 'http://maxblackcase.rf.gd/mail.php'
+const requestURL = 'http://f0402948.xsph.ru/mail.php'
 var form = $('#formMail')
 $(form).on('submit', function (e) {
   e.preventDefault()
   $.ajax({
     type: "POST",
     url: requestURL,
-    data: $(this).serialize(),
+    dataType: "html",
+    data: $(this).serializeArray(),
+    cache: false,
     crossDomain: true,
-    dataType: "jsonp",
     success: function (result) {
       console.log('result:', result)
       $('.contacts-content__submit').html('')
@@ -559,6 +561,7 @@ $(form).on('submit', function (e) {
     }
   })
 })
+
 // * </MAIL>
 
 
