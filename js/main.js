@@ -9,15 +9,14 @@
 //? @prepros-append jq-end.js
 
 // * <PRELOADER>
-$(".wrapper__row").ready(function() {
-  preloader();
-});
+
 function preloader() {
-  setInterval(() => {
-    let p = $(".preloader");
-    p.fadeOut(600);
-  }, 3000);
+  let p = $(".preloader");
+  p.fadeOut(800);
 }
+setInterval(() => {
+  preloader();
+}, 3000);
 // * </PRELOADER>
 
 $(document).ready(function () {

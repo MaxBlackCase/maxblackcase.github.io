@@ -1,5 +1,5 @@
-@import './mixins';
-@import './var';
+@import "./mixins";
+@import "./var";
 .preloader {
   position: fixed;
   overflow: hidden;
@@ -16,26 +16,28 @@
     display: flex;
     flex-wrap: wrap;
     width: 64px;
-    animation: rotatePreloader 10s  infinite linear;
+    animation: rotatePreloader 10s infinite linear;
     span {
       position: relative;
       flex: 0 0 32px;
       width: 32px;
       height: 32px;
       border-radius: 5px;
-      background-color: #095fb4;
-      
       &:nth-child(1) {
         animation: preloadTopLeftCube 1s infinite ease-out;
+        background-color: #00A1F1;
       }
       &:nth-child(2) {
         animation: preloadTopRightCube 1s infinite ease-out;
+        background-color: #7FBA00;
       }
       &:nth-child(3) {
         animation: preloadBottomLeftCube 1s infinite ease-out;
+        background-color: #FFB901;
       }
       &:nth-child(4) {
         animation: preloadBottomRightCube 1s infinite ease-out;
+        background-color: #F25022;
       }
     }
   }
