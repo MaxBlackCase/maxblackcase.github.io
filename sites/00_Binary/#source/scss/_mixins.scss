@@ -1,0 +1,29 @@
+@mixin flexbox {
+  display: flex;
+  font-size: 0;
+}
+@mixin flexboxInline {
+  display: inline-flex;
+  font-size: 0;
+}
+@mixin trans {
+  transition: all 0.3s ease 0s;
+}
+@mixin anim($time, $delay) {
+  transition: all $time ease $delay;
+}
+@mixin scale($s_z) {
+  transform: scale($s_z);
+}
+@mixin rotate($deg) {
+  transform: rotate($deg + deg) scale(1);
+}
+@mixin imgSet {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  img{
+    display: none;
+  }
+}
+

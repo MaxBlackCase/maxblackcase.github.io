@@ -1,0 +1,87 @@
+.portfolio {
+  padding: 105px 0 60px 0;
+  @media (max-width: $md2) {
+    padding: 50px 0 40px 0;
+  }
+  @media (max-width: $md3) {
+    padding: 50px 0 20px 0;
+  }
+  &__header-block {
+    margin: 0px 0px 50px 0px;
+    @media (max-width: $md2) {
+      margin: 0px 0px 30px 0px;
+    }
+    @media (max-width: $md3) {
+      margin: 0px 0px 20px 0px;
+    }
+  }
+
+  &__filter {
+    @extend .textColor;
+    margin: 0px 0px 135px 0px;
+    @include trans;
+    @media (max-width: $md2) {
+      margin: 0px 0px 50px 0px;
+    }
+    @media (max-width: $md3) {
+      margin: 0px 0px 20px 0px;
+    }
+  }
+
+  &__items {
+    @include flexbox;
+    margin: 0 -15px;
+    flex-wrap: wrap;
+  }
+
+  &__column {
+    flex: 0 1 50%;
+    padding: 0 15px;
+    max-width: 50%;
+    flex: 0 1 (100%/2);
+    margin: 0px 0px 30px 0px;
+    @media (max-width: $md3) {
+      flex: 1 1 100%;
+      margin: 0px 0px 15px 0px;
+      max-width: 100%;
+    }
+  }
+
+  &__item {
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    padding: 35px 0px 0px 0px;
+    @media (max-width: $md3) {
+      padding: 15px 0 0px 0;
+    }
+  }
+}
+
+.filter {
+  &__list {
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    color: #3c3c3c;
+    font-size: 15px;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0 25px;
+    cursor: pointer;
+    &.active {
+      color: #ada074;
+    }
+    @media (max-width: $md2) {
+      margin: 0 15px;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "./zeroing";
+@import "./var";
+@import "./mixins";
+@import "./forms";
+
+// ? <FONTS>
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap");
+// ? </FONTS>
+
+// ? <BaguetteBox>
+@import "./baguetteBox";
+// ? </BaguetteBox>
+
+// todo <colors>
+.textColor {
+  color: #868585;
+}
+.footerListTextColor {
+  color: #a4a4a4;
+}
+.footerCopyTextColor {
+  color: #6c6c6c;
+}
+// todo </colors>
+
+html,
+body {
+  height: 100%;
+  font-family: $fondDefault;
+}
+.lock {
+  overflow: hidden;
+  @media (max-width: $md3+px) {
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  @include flexbox;
+  flex-direction: column;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  &.loaded {
+  }
+}
+.container {
+  max-width: $mw;
+  margin: 0 auto;
+  width: 100%;
+  @media (max-width: $md1) {
+    max-width: 970px;
+  }
+  @media (max-width: $md2) {
+    max-width: 750px;
+  }
+  @media (max-width: $md3) {
+    max-width: none;
+    padding: 0 10px;
+  }
+}
+.ibg {
+  @include imgSet;
+}
+
+.header-block {
+  text-align: center;
+  &__title {
+    position: relative;
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 8.95px;
+    padding: 0px 0px 30px 0px;
+    margin: 0px 0px 35px 0px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 81px;
+      height: 2px;
+      background-color: #000;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__subtitle {
+    max-width: 585px;
+    @extend .textColor;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 25.89px;
+  }
+}
+
+// todo <mainblock>
+@import "./mainblock";
+// todo </mainblock>
+
+// ? <content>
+.content {
+  background-color: #fff;
+  position: relative;
+  z-index: 50;
+}
+@import "./menu";
+@import "./about";
+@import "./portfolio";
+@import "./partners";
+@import "./contacts";
+// ? </content>
+// ! <footer>
+@import "./footer";
+// ! </footer>

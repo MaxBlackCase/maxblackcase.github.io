@@ -1,0 +1,133 @@
+.contacts {
+  padding: 180px 0px 60px 0px;
+  @media (max-width: $md3){
+    padding-top: 70px;
+  }
+  &__header-block {
+    margin: 0px 0px 120px 0px;
+    @media (max-width: $md3){
+      margin-bottom: 80px;
+    }
+  }
+
+  &__body {
+    @include flexbox;
+    margin: 0 -25px;
+    @media (max-width: $md3){
+      display: block;
+    }
+  }
+
+  &__column {
+    flex: 0 1 (100% / 2);
+    padding: 0 25px;
+  }
+
+  &__form {
+    text-align: right;
+    @media (max-width: $md3){
+      text-align: left;
+      margin: 0px 0px 30px 0px;
+    }
+  }
+
+  &__content {
+    font-size: 14px;
+    line-height: 26px;
+    max-width: 250px;
+    @media (max-width: $md3){
+      max-width: none;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-weight: 300;
+    margin: 0px 0px 35px 0px;
+    @media (max-width: $md3){
+      max-width: 300px;
+      margin: 0 auto;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    margin: 0px 0px 20px 0px;
+    
+  }
+
+  &__social {
+    margin: 0px 0px 8px 0px;
+    @media (max-width: $md3){
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__email {
+    a {
+      color: #000;
+      font-weight: 700;
+      @include trans;
+      &:hover {
+        text-decoration: underline;
+        color: #3c3c3c;
+      }
+    }
+  }
+}
+
+.form-contacts {
+  &__body {
+    display: inline-block;
+    width: 100%;
+    max-width: 385px;
+    @media (max-width: $md3){
+      max-width: none;
+      display: block;
+    }
+  }
+
+  &__row {
+    @include flexbox;
+    margin: 0 -15px 70px -15px;
+  }
+
+  &__column {
+    flex: 0 1 (100%/2);
+    padding: 0 15px;
+  }
+
+  &__input {
+  }
+
+  &__label {
+    text-align-last: left;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.84px;
+    margin: 0px 0px 18px 0px;
+  }
+
+  &__btn {
+    margin: 25px 0px 0px 0px;
+    @media (max-width: $md3){
+      display: block;
+      width: 100%;
+    }
+  }
+}
+.input {
+}
+.req {
+}
+.email {
+}
+
+.social {
+  @include flexbox;
+  &__item {
+    margin: 0px 15px 0px 0px;
+  }
+}

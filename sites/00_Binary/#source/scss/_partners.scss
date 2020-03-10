@@ -1,0 +1,39 @@
+.partners {
+  background: url("../img/partners/bg.jpg") center / cover no-repeat;
+  padding: 100px 0;
+  text-align: center;
+  @include trans;
+  @media (max-width: $md3){
+    padding: 40px 0;
+  }
+  &__title {
+    color: #ffffff;
+    font-family: Lato;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 1.8px;
+    margin: 0px 0px 93px 0px;
+  }
+
+  &__items {
+    @include flexbox;
+    justify-content: center;
+    align-items: center;
+    max-width: 580px;
+    margin: 0 auto;
+    @media (max-width: $md4){
+      flex-wrap: wrap;
+    }
+  }
+
+  &__column {
+    flex: 0 1 (100% / 4);
+    @media (max-width: $md4) {
+      flex: 1 1 (100% / 2);
+      margin: 0px 0px 25px 0px;
+    }
+  }
+
+  &__item {
+  }
+}
